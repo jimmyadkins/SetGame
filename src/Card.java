@@ -67,6 +67,11 @@ public class Card {
 	 * @return the string describing this card, like "<•••>"
 	 */
 	// TODO: you write the Card's toString
-	
+
+	public String toString()
+	{
+		result = icon+size+number+bracket;
+		return result;
+	}
 	
 }
