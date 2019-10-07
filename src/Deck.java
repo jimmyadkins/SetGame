@@ -11,11 +11,11 @@ public class Deck {
 	 * of the last card.
 	 */
 	public static Deck makeDeck() {
-		int[] num = new int[]{1, 2, 3, 4};
-		int[] size = new int[]{1, 2, 3, 4};
-		int[] icon = new int[]{1, 2, 3, 4};
-		int[] bracket = new int[]{1, 2, 3, 4};
-
+		String[] num = new int[]{"<","{","["};
+		String[] size = new int[]{"<","{","["};
+		String[] icon = new int[]{"<","{","["};
+		String[] bracket1 = new int[]{"<","{","["};
+		String[] bracket2 = new int[]{">","}","]"};
 	}
 
 	public Deck()

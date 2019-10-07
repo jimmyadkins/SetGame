@@ -9,6 +9,14 @@
  * chance to add three more cards.
  */
 public class Referee {
+
+	private Deck deck;
+
+
+	public Referee() {
+
+		deck = Deck.makeDeck();
+	}
 	// TODO: decide which private member variables the Referee class needs and declare them here.
 	
 	/**
