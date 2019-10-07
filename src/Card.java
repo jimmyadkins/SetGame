@@ -27,11 +27,15 @@
  */
 public class Card {
 
-	// TODO: decide which private member variables the Card class requires and declare them here.
+	// DONE: decide which private member variables the Card class requires and declare them here.
+	private int icon;
+	private int size;
+	private int number;
+	private int bracket;
 
 	/**
 	 * constructor - given four values, initialize the card.
-	 * @param whichIcon: a number 0-2, where 0 means "*"; 1 means "o"; and 2 means "•" 
+	 * @param whichIcon: a number 0-2, where 0 means "*"; 1 means "o"; and 2 means "•"
 	 * @param groupSize
 	 * @param numGroups
 	 * @param whichBracket: a number 0-2, where 0 means "[ ]"; 1 means "{ }"; and 2 means "< >"
@@ -41,12 +45,23 @@ public class Card {
 		//--------------------
 		// TODO: insert your code here.
 		//--------------------
+
+		 icon = whichIcon;
+		 size = groupSize;
+		 number = numGroups;
+		 bracket = whichBracket;
+
 	 }
 	
 	 // TODO: write accessors for all member variables. In this case,
 	 //       you shouldn't write modifiers; a Card never changes.
-	 
-	 
+
+	public int getIcon() {return icon;}
+	public int getSize() {return size;}
+	public int getNumber() {return number;}
+	public int getBracket() {return bracket;}
+
+
 	/**
 	 * toString - get a visual description of this card.
 	 * @return the string describing this card, like "<•••>"
