@@ -10,6 +10,14 @@ public class Deck {
 	 * combination of features and sets the topOfDeck to the index
 	 * of the last card.
 	 */
+	public static Deck makeDeck() {
+		int[] num = new int[]{1, 2, 3, 4};
+		int[] size = new int[]{1, 2, 3, 4};
+		int[] icon = new int[]{1, 2, 3, 4};
+		int[] bracket = new int[]{1, 2, 3, 4};
+
+	}
+
 	public Deck()
 	{
 		//--------------------
