@@ -19,7 +19,10 @@ public class Board {
 		// fill the first 12 slots with cards from the deck.
 		// leave the last 3 as null for now.
 		// TODO: Insert your code here.
-		
+		for (int i=0; i<12; i++)
+		{
+
+		}
 		//--------------------
 	}
 	
@@ -34,7 +37,7 @@ public class Board {
 	{
 		Card c = null;
 		//--------------------
-		// TODO: Insertq your code here
+		// TODO: Insert your code here
 		
 		//--------------------
 		return c;

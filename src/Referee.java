@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * The Referee class keeps track of a Board, which in turn 
  * holds a Deck of Cards. The Referee is responsible for communicating 
@@ -10,19 +12,31 @@
  */
 public class Referee {
 
-	private Deck deck;
-
-
-	public Referee() {
-
-		deck = Deck.makeDeck();
-	}
 	// TODO: decide which private member variables the Referee class needs and declare them here.
-	
+	private Board myBoard;
+	private Deck myDeck;
+	private Scanner keyReader;
+	private boolean isSet;
+	private Card myCard;
+
+
 	/**
 	 * constructor
 	 */
 	// TODO: write the Referee's constructor method.
+	public Referee() {
+
+		myDeck = Deck.makeDeck();
+		myBoard= new Board();
+		keyReader = new Scanner(System.in);
+
+
+
+	}
+
+
+	
+
 	
 	/**
 	 * playGame - the main game loop for the program.
