@@ -39,7 +39,19 @@ public class Referee {
 	public void playGame()
 	{
 		// TODO: write the Referee's playGame method.
-		//
+		//deal deck of cards
+        //ask player if there is a set
+        //if there is set, and player determines set
+                //give them point
+        //if there is a set, but player does not see set
+                //tell player there is a set and to keep looking
+        //if there is no set, and player sees set
+                //tell player no set and deal 3 cards
+        // if there is no set, and player sees no set
+               //deal 3 cards
+
+
+
 		boolean gameIsStillPlaying = true;
 
 		System.out.println("Playing game."); // placeholder code
