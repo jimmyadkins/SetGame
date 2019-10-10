@@ -29,13 +29,8 @@ public class Referee {
 		myDeck = Deck.makeDeck();
 		myBoard= new Board();
 		keyReader = new Scanner(System.in);
-
-
-
 	}
 
-
-	
 
 	
 	/**
@@ -44,6 +39,9 @@ public class Referee {
 	public void playGame()
 	{
 		// TODO: write the Referee's playGame method.
+		//
+		boolean gameIsStillPlaying = true;
+
 		System.out.println("Playing game."); // placeholder code
 	}
 }
