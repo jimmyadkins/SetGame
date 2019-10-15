@@ -74,12 +74,18 @@ public class Deck {
 	 */
 	public void shuffle()
 	{
-		//--------------------
-		// TODO: insert your code here.
-		// Hint #1: Remember, (int)(Math.random()*52) will give you an integer from 0..51, inclusive.
-		// Hint #2: 52 is not the number you want for this deck.
-		
-		//--------------------
+		public void shuffle() {
+		int numCards = this.myCards.size();
+
+		for(int i = 0; i < numCards * 3; ++i) {
+			int a = (int)(Math.random() * (double)numCards);
+			int b = (int)(Math.random() * (double)numCards);
+			Card temp = (Card)this.myCards.get(a);
+			this.myCards.set(a, this.myCards.get(b));
+			this.myCards.set(b, temp);
+		}
+
+	}
 		
 	}
 	
