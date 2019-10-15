@@ -1,31 +1,54 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 /**
  * The Deck class represents a stack of cards. 
  */
 public class Deck {
-	private Card[] Deck;
-	private int topOfDeck;
+	private ArrayList<Card> myCards = new ArrayList();
 	
 	/**
 	 * constructor - makes a deck containing one card for every 
 	 * combination of features and sets the topOfDeck to the index
 	 * of the last card.
 	 */
-	public static Deck makeDeck() {
-		String[] num = new int[]{"<","{","["};
-		String[] size = new int[]{"<","{","["};
-		String[] icon = new int[]{"<","{","["};
-		String[] bracket1 = new int[]{"<","{","["};
-		String[] bracket2 = new int[]{">","}","]"};
-	}
 
 	public Deck()
 	{
 		//--------------------
 		// TODO: insert your code here.
-		
+
 		//--------------------
-		
+
 	}
+
+	public static Deck makeDeck() {
+		int[] num = new int[]{1,2,3};
+		int[] size = new int[]{1,2,3};
+		String[] icon = new String[]{"&","@","#"};
+		String[] bracket1 = new String[]{"<","{","["};
+		String[] bracket2 = new String[]{">","}","]"};
+
+		Deck result = new Deck();
+
+		for(int iconNum = 0; iconNum < icon.length; ++iconNum) {
+			for(int bracketNum = 0; bracketNum < bracket1.length; ++bracketNum) {
+				for(int sizeNum = 0; sizeNum < icon.length; ++sizeNum) {
+					for(int numNum = 0; numNum < bracket1.length; ++numNum) {
+						result.addCard(new Card(icon[iconNum], num[sizeNum], size[sizeNum], bracket1[bracketNum], bracket2[bracketNum]));
+					}
+				}
+			}
+		}
+
+		result.shuffle();
+		return result;
+	}
+
+	public void addCard(Card c) {
+		this.myCards.add(c);
+	}
+
+
 	
 	/**
 	 * dealCard - returns the card at the "top" of the deck, moving the
@@ -51,12 +74,18 @@ public class Deck {
 	 */
 	public void shuffle()
 	{
-		//--------------------
-		// TODO: insert your code here.
-		// Hint #1: Remember, (int)(Math.random()*52) will give you an integer from 0..51, inclusive.
-		// Hint #2: 52 is not the number you want for this deck.
-		
-		//--------------------
+		public void shuffle() {
+		int numCards = this.myCards.size();
+
+		for(int i = 0; i < numCards * 3; ++i) {
+			int a = (int)(Math.random() * (double)numCards);
+			int b = (int)(Math.random() * (double)numCards);
+			Card temp = (Card)this.myCards.get(a);
+			this.myCards.set(a, this.myCards.get(b));
+			this.myCards.set(b, temp);
+		}
+
+	}
 		
 	}
 	
@@ -83,12 +112,15 @@ public class Deck {
 	public String toString()
 	{
 		String result = "";
-		//--------------------
-		// TODO: insert your code here. (optional, but suggested)
-		// this is not something you'll use in the game, but might be handy
-		//    for debugging.
-		
-		//--------------------
+		if (!this.hasCard()) {
+			return "Empty Card Stack.\n";
+		} else {
+			Card c;
+			for(Iterator var2 = this.myCards.iterator(); var2.hasNext(); result = result + c.toString() + "\n") {
+				c = (Card)var2.next();
+			}
+
+			return result;
 		return result;
 	}
 	
