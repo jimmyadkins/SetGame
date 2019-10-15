@@ -52,8 +52,11 @@ public class Card {
 		 bracket = whichBracket;
 
 	 }
-	
-	 // TODO: write accessors for all member variables. In this case,
+
+	public Card(String s, int i, int i1, String s1, String s2) {
+	}
+
+	// TODO: write accessors for all member variables. In this case,
 	 //       you shouldn't write modifiers; a Card never changes.
 
 	public int getIcon() {return icon;}
