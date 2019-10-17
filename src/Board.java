@@ -12,7 +12,7 @@ public class Board {
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
-	public makeBoard()
+	public Board makeBoard()
 	{
 		displayedCards = new Card[15];
 		//--------------------
