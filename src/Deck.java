@@ -109,17 +109,18 @@ public class Deck {
 	 */
 	public String toString() {
 		String result = "";
-		if (this.outOfCards()) {
-			return "No more cards...\n";
-		} else {
+
 			Card c;
-			for (Iterator var2 = this.myCards.iterator(); var2.hasNext(); result = result + c.toString() + "\n") {
-				c = (Card) var2.next();
+
+			for (int i = 0; i<81; i++)
+			{
+
 			}
+
 
 			return result;
 		}
 	}
-}
+
 	
 
