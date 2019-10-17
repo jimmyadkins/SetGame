@@ -19,10 +19,10 @@ public class Board {
 		// fill the first 12 slots with cards from the deck.
 		// leave the last 3 as null for now.
 		// TODO: Insert your code here.
-		for (int i=0; i<12; i++)
-		{
-
-		}
+//		for (int i=0; i<12; i++)
+//		{
+//			System.out.println(displayedCards[i]);
+//		}
 		//--------------------
 	}
 	
@@ -153,7 +153,10 @@ public class Board {
 		String result = "";
 		//--------------------
 		// TODO: insert your code here.
-		
+		for (int i=0; i<15; i++)
+		{
+			result = result + displayedCards[i].toString();
+		}
 		//--------------------
 		return result;
 	}

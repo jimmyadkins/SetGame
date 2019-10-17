@@ -30,8 +30,7 @@ public class Referee {
 		myBoard= new Board();
 		keyReader = new Scanner(System.in);
 	}
-
-
+	=
 	
 	/**
 	 * playGame - the main game loop for the program.
@@ -40,6 +39,16 @@ public class Referee {
 	{
 		// TODO: write the Referee's playGame method.
 		//deal deck of cards
+		boolean gameIsStillPlaying = true;
+			while(gameIsStillPlaying)
+			{
+				for (int i=0; i<12; i++)
+				{
+					myDeck.dealCard();
+				}
+				System.out.println("The cards on the board are "+displayedCards);
+			}
+
         //ask player if there is a set
         //if there is set, and player determines set
                 //give them point
@@ -49,6 +58,8 @@ public class Referee {
                 //tell player no set and deal 3 cards
         // if there is no set, and player sees no set
                //deal 3 cards
+
+
 
 
 
