@@ -56,6 +56,7 @@ public class Deck {
 	 *
 	 * @return the next card.
 	 */
+
 	public Card dealCard() {
 		Card c = null;
 
@@ -72,6 +73,7 @@ public class Deck {
 	 * resets "top of deck" to the beginning.
 	 * Note: no return value; just updates private variables.
 	 */
+
 	public void shuffle() {
 		int numCards = this.myCards.size();
 
@@ -90,6 +92,7 @@ public class Deck {
 	 *
 	 * @return - boolean; whether the top of deck is past the end of the deck
 	 */
+
 	public boolean outOfCards() {
 		boolean pastEndOfDeck = false;
 
@@ -107,6 +110,7 @@ public class Deck {
 	 * @return a String with all the cards in it, in the current order,
 	 * with a marker (e.g., "-->" vs. "   ") where the top of the Deck is.
 	 */
+
 	public String toString() {
 		String result = "";
 
