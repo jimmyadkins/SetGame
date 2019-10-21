@@ -19,11 +19,6 @@ public class Board {
 		// fill the first 12 slots with cards from the deck.
 		// leave the last 3 as null for now.
 		// TODO: Insert your code here.
-//		for (int i=0; i<12; i++)
-//		{
-//			System.out.println(displayedCards[i]);
-//		}
-		//--------------------
 	}
 	
 	/**
@@ -104,6 +99,10 @@ public class Board {
 	{
 		//--------------------
 		// TODO: insert your code here.
+		if (getNumCardsOnBoard() < 15)
+		{
+			if (Deck.outOfCards()
+		}
 		
 		//--------------------
 	}
@@ -138,7 +137,14 @@ public class Board {
 		int numCards = 0;
 		//--------------------
 		// TODO: insert your code here
-		
+		for (int i=0; i<15; i++)
+		{
+			if (displayedCards[i] != null)
+			{
+				numCards = numCards + 1;
+			}
+		}
+
 		//--------------------
 		return numCards;
 	}
