@@ -30,7 +30,7 @@ public class Referee {
 		myBoard= new Board();
 		keyReader = new Scanner(System.in);
 	}
-	=
+
 	
 	/**
 	 * playGame - the main game loop for the program.

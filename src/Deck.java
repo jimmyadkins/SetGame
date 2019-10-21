@@ -59,7 +59,7 @@ public class Deck {
 
 	public Card dealCard() {
 		Card c = null;
-
+		return this.hasCard() ? (Card)this.myCards.remove(0) : null;
 
 		if (!this.outOfCards()) {
 
@@ -118,7 +118,7 @@ public class Deck {
 
 			for (int i = 0; i<81; i++)
 			{
-
+                result = dealCard().getBracket()
 			}
 
 
