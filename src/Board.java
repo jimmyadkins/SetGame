@@ -35,10 +35,9 @@ public class Board {
 	 */
 	public Card getCardAtLoc(int loc)
 	{
-		Card c = null;
+		Card c = displayedCards[loc];
 		//--------------------
 		// TODO: Insert your code here
-
 		//--------------------
 		return c;
 	}
