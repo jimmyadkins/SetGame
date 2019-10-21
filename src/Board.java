@@ -33,7 +33,7 @@ public class Board {
 		Card c = null;
 		//--------------------
 		// TODO: Insert your code here
-		
+
 		//--------------------
 		return c;
 	}
@@ -101,7 +101,16 @@ public class Board {
 		// TODO: insert your code here.
 		if (getNumCardsOnBoard() < 15)
 		{
-			if (Deck.outOfCards()
+			if (myDeck.pastEndOfDeck() == false)
+			{
+				for(int i=0; i<15; i++)
+				{
+					if(displayedCards[i] == null)
+					{
+						i.dealCard();
+					}
+				}
+			}
 		}
 		
 		//--------------------
