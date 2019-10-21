@@ -7,14 +7,19 @@
  * dealt into the vacated spots.
  */
 public class Board {
-	
+
+
+
+
 	Card[] displayedCards;
+
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
-	public Board makeBoard()
+	public static Board makeBoard()
 	{
-		displayedCards = new Card[15];
+
+
 		//--------------------
 		// fill the first 12 slots with cards from the deck.
 		// leave the last 3 as null for now.
