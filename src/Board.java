@@ -11,7 +11,7 @@ public class Board {
 
 
 
-	Card[] displayedCards;
+	Card[] displayedCards = new Card[15];;
 
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
