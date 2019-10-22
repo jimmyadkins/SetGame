@@ -1,8 +1,9 @@
 import java.util.ArrayList;
-import java.util.Iterator;
+
 /**
  * The Deck class represents a stack of cards. 
  */
+
 public class Deck {
 	private ArrayList<Card> myCards = new ArrayList();
 
@@ -13,10 +14,6 @@ public class Deck {
 	 */
 
 	public Deck() {
-		//--------------------
-		// TODO: insert your code here.
-
-		//--------------------
 
 	}
 
@@ -40,6 +37,7 @@ public class Deck {
 		}
 
 		result.shuffle();
+		Card topOfDeck = result.myCards.get(0);
 		return result;
 	}
 
@@ -59,7 +57,7 @@ public class Deck {
 
 	public Card dealCard() {
 		Card c = null;
-		return this.hasCard() ? (Card)this.myCards.remove(0) : null;
+		return this.hasCard() ? (Card) this.myCards.remove(0) : null;
 
 		if (!this.outOfCards()) {
 
@@ -103,28 +101,31 @@ public class Deck {
 		return pastEndOfDeck;
 	}
 
+}
 
-	/**
-	 * toString - lists all the cards in the deck.
-	 *
-	 * @return a String with all the cards in it, in the current order,
-	 * with a marker (e.g., "-->" vs. "   ") where the top of the Deck is.
-	 */
+// 					I dont think we need this
 
-	public String toString() {
-		String result = "";
-
-			Card c;
-
-			for (int i = 0; i<81; i++)
-			{
-                result = dealCard().getBracket()
-			}
-
-
-			return result;
-		}
-	}
+//	/**
+//	 * toString - lists all the cards in the deck.
+//	 *
+//	 * @return a String with all the cards in it, in the current order,
+//	 * with a marker (e.g., "-->" vs. "   ") where the top of the Deck is.
+//	 */
+//
+//	public String toString() {
+//		String result = "";
+//
+//			Card c;
+//
+//			for (int i = 0; i<81; i++)
+//			{
+//                result =
+//			}
+//
+//
+//			return result;
+//		}
+//	}
 
 	
 

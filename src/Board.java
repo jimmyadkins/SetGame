@@ -11,19 +11,27 @@ public class Board {
 
 
 
-	Card[] displayedCards = new Card[15];;
+	Card[] displayedCards;
 
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
-	public static Board makeBoard()
+	public Board makeBoard()
 	{
-
+		for (int i = 0; i < 15; i++)
+		{
+			if (i >= 13){
+				return null;
+			}
+			displayedCards[i] = Referee.myDeck.dealCard();
+		}
 
 		//--------------------
 		// fill the first 12 slots with cards from the deck.
 		// leave the last 3 as null for now.
 		// TODO: Insert your code here.
+
+		return displayedCards[];
 	}
 	
 	/**
