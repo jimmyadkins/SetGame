@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Deck {
 	private ArrayList<Card> myCards = new ArrayList();
+	Card topOfDeck = myCards.get(0);
 
 	/**
 	 * constructor - makes a deck containing one card for every
@@ -14,6 +15,7 @@ public class Deck {
 	 */
 
 	public Deck() {
+
 
 	}
 
@@ -37,7 +39,7 @@ public class Deck {
 		}
 
 		result.shuffle();
-		Card topOfDeck = result.myCards.get(0);
+
 		return result;
 	}
 
@@ -57,12 +59,17 @@ public class Deck {
 
 	public Card dealCard() {
 		Card c = null;
-		return this.hasCard() ? (Card) this.myCards.remove(0) : null;
 
-		if (!this.outOfCards()) {
-
+		if (this.outOfCards())
+		{
+			return null;
 		}
-
+		else
+		{
+			c = topOfDeck;
+			myCards.remove(topOfDeck);
+			topOfDeck = myCards.get(0);
+		}
 		return c;
 	}
 
