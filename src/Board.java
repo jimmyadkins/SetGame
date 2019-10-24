@@ -20,7 +20,7 @@ public class Board {
 	{
 		for (int i = 0; i < 15; i++)
 		{
-			if (i >= 13){
+			if (i >= 12){
 				return null;
 			}
 			displayedCards[i] = Referee.myDeck.dealCard();
@@ -31,7 +31,7 @@ public class Board {
 		// leave the last 3 as null for now.
 		// TODO: Insert your code here.
 
-		return displayedCards[];
+
 	}
 	
 	/**

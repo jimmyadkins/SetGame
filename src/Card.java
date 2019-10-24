@@ -28,10 +28,11 @@
 public class Card {
 
 	// DONE: decide which private member variables the Card class requires and declare them here.
-	private int icon;
-	private int size;
-	private int number;
-	private int bracket;
+	private char myIcon;
+	private int mySize;
+	private int myNumber;
+	private char myBracket1;
+	private char myBracket2;
 
 	/**
 	 * constructor - given four values, initialize the card.
@@ -73,7 +74,7 @@ public class Card {
 
 	public String toString()
 	{
-		result = icon+size+number+bracket;
+		String result =  +icon+ +size+ +number+ +bracket+ ;
 		return result;
 	}
 	

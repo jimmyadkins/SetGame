@@ -22,9 +22,9 @@ public class Deck {
 	public static Deck makeDeck() {
 		int[] num = new int[]{1, 2, 3};
 		int[] size = new int[]{1, 2, 3};
-		String[] icon = new String[]{"&", "@", "#"};
-		String[] bracket1 = new String[]{"<", "{", "["};
-		String[] bracket2 = new String[]{">", "}", "]"};
+		char[] icon = new char[]{'&', '@', '#'};
+		char[] bracket1 = new char[]{'<', '{', '['};
+		char[] bracket2 = new char[]{'>', '}', ']'};
 
 		Deck result = new Deck();
 
@@ -58,7 +58,7 @@ public class Deck {
 	 */
 
 	public Card dealCard() {
-		Card c = null;
+		Card c;
 
 		if (this.outOfCards())
 		{
@@ -110,29 +110,6 @@ public class Deck {
 
 }
 
-// 					I dont think we need this
-
-//	/**
-//	 * toString - lists all the cards in the deck.
-//	 *
-//	 * @return a String with all the cards in it, in the current order,
-//	 * with a marker (e.g., "-->" vs. "   ") where the top of the Deck is.
-//	 */
-//
-//	public String toString() {
-//		String result = "";
-//
-//			Card c;
-//
-//			for (int i = 0; i<81; i++)
-//			{
-//                result =
-//			}
-//
-//
-//			return result;
-//		}
-//	}
 
 	
 
