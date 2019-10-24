@@ -120,6 +120,10 @@ public class Board {
 		{
 			bracketLegal = true;
 		}
+		if (iconLegal == true && sizeLegal == true && numberLegal == true && bracketLegal == true)
+		{
+			legal = true;
+		}
 		//--------------------
 		return legal;
 	}
