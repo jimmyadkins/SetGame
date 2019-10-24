@@ -14,7 +14,7 @@ public class Referee {
 
 	// TODO: decide which private member variables the Referee class needs and declare them here.
 	private Board myBoard;
-    private Deck myDeck;
+    public Deck myDeck;
 	private Scanner keyReader;
 	private boolean isSet;
 	private Card myCard;
