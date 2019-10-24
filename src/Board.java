@@ -88,7 +88,30 @@ public class Board {
 		//       factors of 3. You should not need a ton of "if" statements!!!!
 		//       See me if you have questions.
 		// TODO: insert your code here.
-		
+		boolean iconLegal = false;
+		boolean sizeLegal = false;
+		boolean numberLegal = false;
+		boolean bracketLegal = false;
+		int iconTotal = a.getIcon() + b.getIcon() + c.getIcon();
+		if (iconTotal%3 == 0)
+		{
+			iconLegal = true;
+		}
+		int sizeTotal = a.getSize() + b.getSize() + c.getSize();
+		if (sizeTotal%3 == 0)
+		{
+			sizeLegal = true;
+		}
+		int numberTotal = a.getNumber() + b.getNumber() + c.getNumber();
+		if (numberTotal%3 == 0)
+		{
+			numberLegal = true;
+		}
+		int bracketTotal = a.getBracket() + b.getBracket() + c.getBracket();
+		if (bracketTotal%3 == 0)
+		{
+			bracketLegal = true;
+		}
 		//--------------------
 		return legal;
 	}
