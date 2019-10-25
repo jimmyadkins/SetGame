@@ -99,13 +99,11 @@ public class Deck {
 	 */
 
 	public boolean outOfCards() {
-		boolean pastEndOfDeck = false;
 
 		if (this.myCards.size() > 0) {
-			pastEndOfDeck = true;
+			return true;
 		}
-
-		return pastEndOfDeck;
+		return false;
 	}
 
 }
