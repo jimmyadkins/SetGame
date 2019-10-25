@@ -20,7 +20,7 @@ public class Board {
 	{
 		for (int i = 0; i < 15; i++)
 		{
-			if (i >= 12){
+			if (i >= 13){
 				return null;
 			}
 			displayedCards[i] = Referee.myDeck.dealCard();
@@ -31,7 +31,7 @@ public class Board {
 		// leave the last 3 as null for now.
 		// TODO: Insert your code here.
 
-
+		return displayedCards[];
 	}
 	
 	/**
@@ -45,7 +45,7 @@ public class Board {
 	{
 		Card c = displayedCards[loc];
 		//--------------------
-		// TODO: Insert your code here
+		// DONE: Insert your code here
 		//--------------------
 		return c;
 	}
@@ -95,7 +95,7 @@ public class Board {
 		// Hint: there is a fancy math trick for making this work, involving
 		//       factors of 3. You should not need a ton of "if" statements!!!!
 		//       See me if you have questions.
-		// TODO: insert your code here.
+		// DONE: insert your code here.
 		boolean iconLegal = false;
 		boolean sizeLegal = false;
 		boolean numberLegal = false;
@@ -168,13 +168,19 @@ public class Board {
 	 * prerequisite: all three locations are within 0-14, all point to non-null cards,
 	 * and there are no duplicates.
 	 */
-	 // TODO: 
+	 // DONE:
 	 // 1: write the remove3Cards() method signature. (i.e., return type, method name, parameter list)
 	 //    MAKE SURE THAT YOU COMMUNICATE THIS WITH THE REST OF YOUR TEAM.
 	 // 2: go to BoardTest.java and write a test to make sure that this is
 	 //    working - Look at the test for "testGetNumCardsOnBoardAndDeal3" as an
 	 //    example of what to write here.
 	 // 3: write the method and make sure that it passes the test.
+    public void remove3Cards(int cardLocation0, int cardLocation1, int cardLocation2)
+    {
+        displayedCards[cardLocation0] = null;
+        displayedCards[cardLocation1] = null;
+        displayedCards[cardLocation2] = null;
+    }
 	
 	/**
 	 * getNumCardsOnBoard
@@ -184,7 +190,7 @@ public class Board {
 	{
 		int numCards = 0;
 		//--------------------
-		// TODO: insert your code here
+		// DONE: insert your code here
 		for (int i=0; i<15; i++)
 		{
 			if (displayedCards[i] != null)
@@ -206,7 +212,7 @@ public class Board {
 	{
 		String result = "";
 		//--------------------
-		// TODO: insert your code here.
+		// DONE: insert your code here.
 		for (int i=0; i<15; i++)
 		{
 			result = result + displayedCards[i].toString();
