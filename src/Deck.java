@@ -89,7 +89,6 @@ public class Deck {
 			this.myCards.set(a, this.myCards.get(b));
 			this.myCards.set(b, temp);
 		}
-
 	}
 
 	/**

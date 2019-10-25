@@ -34,25 +34,7 @@ public class Card {
 	private char myBracket1;
 	private char myBracket2;
 
-	/**
-	 * constructor - given four values, initialize the card.
-	 * @param whichIcon: a number 0-2, where 0 means "*"; 1 means "o"; and 2 means "•"
-	 * @param groupSize
-	 * @param numGroups
-	 * @param whichBracket: a number 0-2, where 0 means "[ ]"; 1 means "{ }"; and 2 means "< >"
-	 */
-	 public Card(char whichIcon, int groupSize, int numGroups, char whichBracket)
-	 {
-		//--------------------
-		// TODO: insert your code here.
-		//--------------------
-
-		 icon = whichIcon;
-		 size = groupSize;
-		 number = numGroups;
-		 bracket = whichBracket;
-
-	 }
+	
 
 	public Card(char icon, int number, int size, char bracket1, char bracket2) {
 
