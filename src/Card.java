@@ -34,10 +34,15 @@ public class Card {
 	private char myBracket1;
 	private char myBracket2;
 
-	
+
 
 	public Card(char icon, int number, int size, char bracket1, char bracket2) {
-
+		
+		myIcon = icon;
+		mySize = size;
+		myNumber = number;
+		myBracket1 = bracket1;
+		myBracket2 = bracket2;
 
 	}
 
