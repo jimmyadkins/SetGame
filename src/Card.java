@@ -54,17 +54,20 @@ public class Card {
 
 	 }
 
-	public Card(char Icon, int Number, int Size, char Bracket1, char Bracket2) {
+	public Card(char icon, int number, int size, char bracket1, char bracket2) {
+
+
 	}
 
 	// TODO: write accessors for all member variables. In this case,
 	 //       you shouldn't write modifiers; a Card never changes.
 
-	public int getIcon() {return icon;}
-	public int getSize() {return size;}
-	public int getNumber() {return number;}
-	public int getBracket() {return bracket;}
 
+	public int getIcon() {return myIcon;}
+	public int getSize() {return mySize;}
+	public int getNumber() {return myNumber;}
+	public int getBracket1() {return myBracket1;}
+	public int getBracket2() {return myBracket2;}
 
 	/**
 	 * toString - get a visual description of this card.
@@ -74,7 +77,15 @@ public class Card {
 
 	public String toString()
 	{
-		String result =  +icon+ +size+ +number+ +bracket+ ;
+		String result =  ""+myBracket1+"";
+		for (int i = 0; i < mySize; i++) {
+			result = ""+result+ +myIcon+"";
+		}
+		result = ""+result+ +myBracket2+ "";
+		for (int i = 0; i <=mySize; i++)
+		{
+			result = ""+result+ " " +result+"";
+		}
 		return result;
 	}
 	
