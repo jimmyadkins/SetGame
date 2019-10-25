@@ -41,7 +41,7 @@ public class Card {
 	 * @param numGroups
 	 * @param whichBracket: a number 0-2, where 0 means "[ ]"; 1 means "{ }"; and 2 means "< >"
 	 */
-	 public Card(int whichIcon, int groupSize, int numGroups, int whichBracket)
+	 public Card(char whichIcon, int groupSize, int numGroups, char whichBracket)
 	 {
 		//--------------------
 		// TODO: insert your code here.
@@ -54,7 +54,7 @@ public class Card {
 
 	 }
 
-	public Card(String s, int i, int i1, String s1, String s2) {
+	public Card(char Icon, int Number, int Size, char Bracket1, char Bracket2) {
 	}
 
 	// TODO: write accessors for all member variables. In this case,

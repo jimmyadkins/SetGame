@@ -32,7 +32,7 @@ public class Deck {
 			for (int bracketNum = 0; bracketNum < bracket1.length; ++bracketNum) {
 				for (int sizeNum = 0; sizeNum < icon.length; ++sizeNum) {
 					for (int numNum = 0; numNum < bracket1.length; ++numNum) {
-						result.addCard(new Card(icon[iconNum], num[sizeNum], size[sizeNum], bracket1[bracketNum], bracket2[bracketNum]));
+						result.addCard(new Card(icon[iconNum], num[numNum], size[sizeNum], bracket1[bracketNum], bracket2[bracketNum]));
 					}
 				}
 			}
