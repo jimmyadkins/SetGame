@@ -14,7 +14,7 @@ public class Referee {
 
 	// TODO: decide which private member variables the Referee class needs and declare them here.
 	private Board myBoard;
-    public Deck myDeck;
+    private Deck myDeck;
 	private Scanner keyReader;
 	private boolean isSet;
 	private Card myCard;
@@ -27,7 +27,7 @@ public class Referee {
 	public Referee() {
 
         myDeck = Deck.makeDeck();
-		myBoard = Board.makeBoard();
+		myBoard = new Board(myDeck);
 		keyReader = new Scanner(System.in);
 	}
 

@@ -16,22 +16,19 @@ public class Board {
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
-	public Board makeBoard()
+	public Board(Deck d)
 	{
-		for (int i = 0; i < 15; i++)
+		displayedCards = new Card[15];
+		for (int i = 0; i < 12; i++)
 		{
-			if (i >= 13){
-				return null;
-			}
-			displayedCards[i] = Referee.myDeck.dealCard();
+			displayedCards[i] = d.dealCard();
 		}
 
 		//--------------------
 		// fill the first 12 slots with cards from the deck.
 		// leave the last 3 as null for now.
-		// TODO: Insert your code here.
+		// DONE: Insert your code here.
 
-		return displayedCards[];
 	}
 	
 	/**
@@ -134,19 +131,19 @@ public class Board {
 	 * the deck and put them into the first three locations that contain
 	 * null.
 	 */
-	public void dealThreeCards()
+	public void dealThreeCards(Deck d)
 	{
 		//--------------------
 		// TODO: insert your code here.
 		if (getNumCardsOnBoard() < 15)
 		{
-			if (myDeck.pastEndOfDeck() == false)
+			if (d.outOfCards() == false)
 			{
 				for(int i=0; i<15; i++)
 				{
 					if(displayedCards[i] == null)
 					{
-						i.dealCard();
+						displayedCards[i] = d.dealCard();
 					}
 				}
 			}
