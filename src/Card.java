@@ -37,7 +37,7 @@ public class Card {
 
 
 	public Card(char icon, int number, int size, char bracket1, char bracket2) {
-		
+
 		myIcon = icon;
 		mySize = size;
 		myNumber = number;
@@ -71,7 +71,8 @@ public class Card {
 		result = ""+result+ +myBracket2+ "";
 		for (int i = 0; i <=mySize; i++)
 		{
-			result = ""+result+ " " +result+"";
+			String single = result;
+			result = ""+result+ " " +single+"";
 		}
 		return result;
 	}
