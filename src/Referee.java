@@ -60,6 +60,7 @@ public class Referee {
 							if (choice.equals("no"))
 							{
 								playing = false;
+								break;
 							}
 							if (choice.equals("yes"))
 							{

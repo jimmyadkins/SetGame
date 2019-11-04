@@ -21,7 +21,7 @@ public class Board {
 		{
 			displayedCards[i] = d.dealCard();
 		}
-		for (int i = 13; i <= 16; i++)
+		for (int i = 13; i < 16; i++)
 		{
 			displayedCards[i] = null;
 		}
@@ -138,17 +138,17 @@ public class Board {
 	 */
 	public void dealThreeCards(Deck d)
 	{
-		//--------------------
-		// TODO: insert your code here.
+
 		if (getNumCardsOnBoard() < 15)
 		{
 			if (!d.outOfCards())
 			{
 				for(int i=0; i<15; i++)
 				{
-					if(displayedCards[i] == null)
-					{
-						displayedCards[i] = d.dealCard();
+
+						if (displayedCards[i] == null) {
+							displayedCards[i] = d.dealCard();
+						
 					}
 				}
 			}
