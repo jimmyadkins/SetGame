@@ -46,9 +46,9 @@ public class Referee {
 		{
 					System.out.println();
 					System.out.println(myBoard.toString());
-					int card1 = scan.nextInt();
-					int card2 = scan.nextInt();
-					int card3 = scan.nextInt();
+					int card1 = scan.nextInt()-1;
+					int card2 = scan.nextInt()-1;
+					int card3 = scan.nextInt()-1;
 					System.out.println("Which cards make a set?");
 					if (card1 == 0 && card2 == 0 && card3 == 0) {
 						System.out.println("Would you like to keep playing?");
