@@ -148,7 +148,7 @@ public class Board {
 
 						if (displayedCards[i] == null) {
 							displayedCards[i] = d.dealCard();
-						
+
 					}
 				}
 			}

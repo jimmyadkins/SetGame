@@ -64,7 +64,7 @@ public class Card {
 	 * toString - get a visual description of this card.
 	 * @return the string describing this card, like "<•••>"
 	 */
-	// TODO: you write the Card's toString
+
 
 	public String toString()
 	{
