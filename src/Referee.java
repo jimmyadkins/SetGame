@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.function.DoubleToIntFunction;
 
 /**
  * The Referee class keeps track of a Board, which in turn 
@@ -15,9 +16,8 @@ public class Referee {
 	// TODO: decide which private member variables the Referee class needs and declare them here.
 	private Board myBoard;
     private Deck myDeck;
-	private Scanner keyReader;
-	private boolean isSet;
-	private Card myCard;
+	private Scanner scan;
+	private boolean playing;
 
 
 	/**
@@ -28,7 +28,7 @@ public class Referee {
 
         myDeck = Deck.makeDeck();
 		myBoard = new Board(myDeck);
-		keyReader = new Scanner(System.in);
+		scan = new Scanner(System.in);
 	}
 
 	
@@ -37,16 +37,47 @@ public class Referee {
 	 */
 	public void playGame()
 	{
-		// TODO: write the Referee's playGame method.
-		//deal deck of cards
-		boolean gameIsStillPlaying = true;
-			while(gameIsStillPlaying)
-			{
-				for (int i=0; i<12; i++)
-				{
-					myDeck.dealCard();
+		playing = true;
+		System.out.println("Great! Here are the rules: Find three cards that either share all features but one, or find three cards that share exactly 0 features.");
+		System.out.println("Now, type each number corresponding to each card that you think makes a set. Remember to type them in separate lines.");
+		System.out.println("If there isn't a set, or you just give up, type '0' for each line to get 3 cards added. The maximum amount of cards allowed at once is 15.");
+		while (playing)
+		{
+					System.out.println(myBoard.toString());
+					int card1 = scan.nextInt();
+					int card2 = scan.nextInt();
+					int card3 = scan.nextInt();
+					if (card1 == 0 && card2 == 0 && card3 == 0) {
+						if (myBoard.getNumCardsOnBoard() < 15) {
+							myBoard.dealThreeCards(myDeck);
+						} else if (myBoard.getNumCardsOnBoard() == 15) {
+							System.out.println("There are already 15 cards in play!");
+						} else if (myDeck.outOfCards()) {
+							System.out.println("There are no more cards in the deck!");
+							System.out.println("Would you like to end this game?");
+							String choice = scan.nextLine();
+							if (choice.equals("no"))
+							{
+								playing = false;
+							}
+							if (choice.equals("yes"))
+							{
+								System.out.println("Great!");
+							}
+					}
+					else if (myBoard.isLegal(card1,card2,card3))
+					{
+						System.out.println("Good job- that's a set!");
+						myBoard.remove3Cards(card1,card2,card3);
+						myBoard.dealThreeCards(myDeck);
+
+					}
+					else
+					{
+						System.out.println("That isn't a set! Try again.");
+					}
+
 				}
-				System.out.println("The cards on the board are "+displayedCards);
 			}
 
         //ask player if there is a set

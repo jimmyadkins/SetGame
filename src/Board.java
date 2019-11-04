@@ -8,20 +8,22 @@
  */
 public class Board {
 
-
-
-
-	Card[] displayedCards;
+	private Card[] displayedCards;
 
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
-	public Board(Deck d)
+
+	Board(Deck d)
 	{
 		displayedCards = new Card[15];
-		for (int i = 0; i < 12; i++)
+		for (int i = 1; i <= 12; i++)
 		{
 			displayedCards[i] = d.dealCard();
+		}
+		for (int i = 12; i <= 15; i++)
+		{
+			displayedCards[i] = null;
 		}
 
 		//--------------------
@@ -46,13 +48,11 @@ public class Board {
 		//--------------------
 		return c;
 	}
-	
+
+
 	/**
 	 * isLegal - determines whether the three cards at the given locations
-	 * are a "SET."
-	 * @param cardLocation0
-	 * @param cardLocation1
-	 * @param cardLocation2  // alternately, use a small array.
+	 * are a "SET."/ alternately, use a small array.
 	 * @return whether (true/false) these cards are a "SET."
 	 * A SET is formed when for each of the four categories, all the cards 
 	 * are the same, or all are different. For example, here is a "SET":
@@ -85,8 +85,12 @@ public class Board {
 	 * Note: If you are given the same card twice (or three times), it is illegal.
 	 * Note: If any of the cards are null, it is illegal.
 	 */
-	public boolean isLegal(Card a, Card b, Card c)
+	public boolean isLegal(int loc1, int loc2, int loc3)
 	{
+		Card a = getCardAtLoc(loc1);
+		Card b = getCardAtLoc(loc2);
+		Card c = getCardAtLoc(loc3);
+
 		boolean legal = false;
 		//--------------------
 		// Hint: there is a fancy math trick for making this work, involving
@@ -97,6 +101,7 @@ public class Board {
 		boolean sizeLegal = false;
 		boolean numberLegal = false;
 		boolean bracketLegal = false;
+
 		int iconTotal = a.getIcon() + b.getIcon() + c.getIcon();
 		if (iconTotal%3 == 0)
 		{
@@ -117,7 +122,7 @@ public class Board {
 		{
 			bracketLegal = true;
 		}
-		if (iconLegal == true && sizeLegal == true && numberLegal == true && bracketLegal == true)
+		if (iconLegal && sizeLegal && numberLegal && bracketLegal)
 		{
 			legal = true;
 		}
@@ -137,7 +142,7 @@ public class Board {
 		// TODO: insert your code here.
 		if (getNumCardsOnBoard() < 15)
 		{
-			if (d.outOfCards() == false)
+			if (!d.outOfCards())
 			{
 				for(int i=0; i<15; i++)
 				{
@@ -148,6 +153,7 @@ public class Board {
 				}
 			}
 		}
+
 		
 		//--------------------
 	}
@@ -183,7 +189,7 @@ public class Board {
 	 * getNumCardsOnBoard
 	 * @return the number of non-null cards on the board
 	 */
-	public int getNumCardsOnBoard()
+	int getNumCardsOnBoard()
 	{
 		int numCards = 0;
 		//--------------------
@@ -212,7 +218,7 @@ public class Board {
 		// DONE: insert your code here.
 		for (int i=0; i<15; i++)
 		{
-			result = result + displayedCards[i].toString();
+			result = result + i + ". " +displayedCards[i].toString()+ "\n";
 		}
 		//--------------------
 		return result;

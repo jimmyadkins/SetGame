@@ -29,32 +29,36 @@ public class Card {
 
 	// DONE: decide which private member variables the Card class requires and declare them here.
 	private char myIcon;
+	private int myIconNum;
 	private int mySize;
 	private int myNumber;
+	private int myBracket;
 	private char myBracket1;
 	private char myBracket2;
 
 
 
-	public Card(char icon, int number, int size, char bracket1, char bracket2) {
+	public Card(char icon, int iconNum, int number, int size, int bracketNum, char bracket1, char bracket2) {
 
 		myIcon = icon;
+		myIconNum = iconNum;
 		mySize = size;
 		myNumber = number;
+		myBracket = bracketNum;
 		myBracket1 = bracket1;
 		myBracket2 = bracket2;
 
+
 	}
 
-	// TODO: write accessors for all member variables. In this case,
+	// Done: write accessors for all member variables. In this case,
 	 //       you shouldn't write modifiers; a Card never changes.
 
 
-	public int getIcon() {return myIcon;}
+	public int getIcon() {return myIconNum;}
 	public int getSize() {return mySize;}
 	public int getNumber() {return myNumber;}
-	public int getBracket1() {return myBracket1;}
-	public int getBracket2() {return myBracket2;}
+	public int getBracket() {return myBracket;}
 
 	/**
 	 * toString - get a visual description of this card.
