@@ -1,33 +1,6 @@
-/**
- * the Card class represents a card in the Set game - it consists 
- * of 1-3 groups of 1-3 characters, which come in 3 varieties. Each of the
- * groups is surrounded by one of three bracket types. On any one card, 
- * there is only one character, but it is likely to be repeated.
- * Likewise, there might be several groups of characters, but each group 
- * on a given card will have the same number of cards.
- * The following are legal cards:
- *    [**] [**] [**] (3 groups of 2 stars in square brackets)
- *    <o> <o> (2 groups of 1 circle in angle brackets)
- *    {•••} (1 group of 3 dots in curly brackets)
- *    <•••> <•••> <•••> (3 groups of three dots in angle brackets)
- * (An analogy might be working out on a nautilus machine - you do a 
- * certain number of sets of a certain number of reps of some weight,
- * on varying machines.)
- * The following are NOT legal cards:
- *    {*} {**} {***} (different size groups on one card)
- *    [o] [•] [•] (different shapes on one card)
- *    <**> <**> {**} (different brackets on one card)
- *    [oooo] [oooo] (more than three in a group)
- *    <•> <•> <•> <•> (more than three groups)
- *      (empty card)
- * So each card can be represented by four numbers - the number of groups, 
- * the size of the groups, which bracket and which icon you are using.
- * Each of these numbers has 3 possible values.
- * Question: how many legal combinations are there???
- */
+
 public class Card {
 
-	// DONE: decide which private member variables the Card class requires and declare them here.
 	private char myIcon;
 	private int myIconNum;
 	private int mySize;
@@ -35,8 +8,6 @@ public class Card {
 	private int myBracket;
 	private char myBracket1;
 	private char myBracket2;
-
-
 
 	public Card(char icon, int iconNum, int number, int size, int bracketNum, char bracket1, char bracket2) {
 
@@ -49,33 +20,23 @@ public class Card {
 		myBracket2 = bracket2;
 	}
 
-	// Done: write accessors for all member variables. In this case,
-	 //       you shouldn't write modifiers; a Card never changes.
-
-
-	public int getIcon() {return myIconNum;}
-	public int getSize() {return mySize;}
-	public int getNumber() {return myNumber;}
-	public int getBracket() {return myBracket;}
-
-	/**
-	 * toString - get a visual description of this card.
-	 * @return the string describing this card, like "<•••>"
-	 */
-
+	int getIcon() {return myIconNum;}
+	int getSize() {return mySize;}
+	int getNumber() {return myNumber;}
+	int getBracket() {return myBracket;}
 
 	public String toString()
 	{
 		String icons = "";
 		String result = "";
 		for (int i = 0; i < mySize; i++) {
-			icons = icons +myIcon+"";
+			icons = icons + myIcon;
 		}
-		String single = ""+myBracket1+ icons +myBracket2+ "";
+		String single = myBracket1 + icons + myBracket2;
 
 		for (int i = 0; i <myNumber; i++)
 		{
-			result = ""+result+ " " +single+"";
+			result = result + single;
 		}
 		return result;
 	}

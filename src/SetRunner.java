@@ -7,23 +7,30 @@ public class SetRunner {
 		Scanner scan = new Scanner(System.in);
 		ref = new Referee();
 		boolean isPlaying = true;
-		System.out.println("Hi, welcome to the set casino where we only play set.");
+		System.out.println("Hello there, welcome to the set casino where we only play set!");
+		System.out.println("Would you like to play? Type 'yes' or 'no'");
+		String choice = scan.nextLine();
 
-		while (isPlaying) {
-
-			System.out.println("Would you like to play? Type 'yes' or 'no'");
-			String choice = scan.nextLine();
-			if (choice.equals("no")) {
-				System.out.println("Ok then... Bye!");
-				isPlaying = false;
-			}
-			else if (choice.equals("yes")) {
-				ref.playGame();
-			}
-			else {
+		if (!choice.equals("no")||!choice.equals("yes")) {
+			boolean retry = true;
+			while (retry)
+			{
 				System.out.println("We didn't catch that- Type 'yes' or 'no'.");
+				choice = scan.nextLine();
+				if (choice.equals("no") || choice.equals("yes"))
+				{
+					retry = false;
+				}
 			}
-			isPlaying = ref.playing;
+
+		}
+
+		if (choice.equals("no")) {
+			System.out.println("Ok then... Bye!");
+			isPlaying = false;
+		}
+		if (choice.equals("yes")) {
+			ref.playGame();
 		}
 	}
 }

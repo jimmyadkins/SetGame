@@ -1,21 +1,9 @@
 
-
-/**
- * The Deck class represents a stack of cards. 
- */
-
- public class Deck {
+public class Deck {
  	Card[] myCards;
 	private Card topCard;
 	private int topLoc = 0;
 	private int numCards = 0;
-
-
-	/**
-	 * constructor - makes a deck containing one card for every
-	 * combination of features and sets the topOfDeck to the index
-	 * of the last card.
-	 */
 
 	public Deck() {
 		int[] num = new int[]{1, 2, 3};
@@ -92,16 +80,6 @@
 		this.myCards[getTopLoc() + 1] = c;
 	}
 
-
-	/**
-	 * dealCard - returns the card at the "top" of the deck, moving the
-	 * "top" down one.
-	 * If the "top" is low enough to be past the end of the deck,
-	 * then return null.
-	 *
-	 * @return the next card.
-	 */
-
 	public Card dealCard() {
 		Card c;
 
@@ -117,12 +95,6 @@
 		return c;
 	}
 
-	/**
-	 * shuffle - shuffles the cards in the deck by swapping many times.
-	 * resets "top of deck" to the beginning.
-	 * Note: no return value; just updates private variables.
-	 */
-
 	void shuffle() {
 		for (int i = 0; i < getNumCards() * 3; ++i) {
 			int a = (int) (Math.random() * (double) getNumCards());
@@ -132,12 +104,6 @@
 			this.myCards[b] = temp;
 		}
 	}
-
-	/**
-	 * outOfCards - determines whether the "top of deck" has extended beyond the end of the Deck.
-	 *
-	 * @return - boolean; whether the top of deck is past the end of the deck
-	 */
 
 	public boolean outOfCards() {
 
