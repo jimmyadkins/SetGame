@@ -10,6 +10,7 @@ public class SetRunner {
 		System.out.println("Hi, welcome to the set casino where we only play set.");
 
 		while (isPlaying) {
+
 			System.out.println("Would you like to play? Type 'yes' or 'no'");
 			String choice = scan.nextLine();
 			if (choice.equals("no")) {
@@ -22,6 +23,7 @@ public class SetRunner {
 			else {
 				System.out.println("We didn't catch that- Type 'yes' or 'no'.");
 			}
+			isPlaying = ref.playing;
 		}
 	}
 }

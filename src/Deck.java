@@ -33,9 +33,6 @@
 				for (int sizeNum = 0; sizeNum < icon.length; ++sizeNum) {
 					for (int numNum = 0; numNum < num.length; ++numNum) {
 						this.myCards[index] = new Card(icon[iconNumber], iconNum[iconNumber], num[numNum], size[sizeNum], bracket[bracketNum], bracket1[bracketNum], bracket2[bracketNum]);
-						System.out.println();
-						System.out.println(this.myCards[index].toString());
-						System.out.println();
 						index++;
 					}
 				}
@@ -127,7 +124,7 @@
 	 */
 
 	void shuffle() {
-		for (int i = 0; i < numCards * 3; ++i) {
+		for (int i = 0; i < getNumCards() * 3; ++i) {
 			int a = (int) (Math.random() * (double) getNumCards());
 			int b = (int) (Math.random() * (double) getNumCards());
 			Card temp = this.myCards[a];

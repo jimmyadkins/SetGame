@@ -17,7 +17,7 @@ public class Referee {
 	private Board myBoard;
     private Deck myDeck;
 	private Scanner scan;
-	private boolean playing;
+	boolean playing;
 
 
 	/**
@@ -46,22 +46,11 @@ public class Referee {
 		{
 					System.out.println();
 					System.out.println(myBoard.toString());
-					int card1 = scan.nextInt()-1;
-					int card2 = scan.nextInt()-1;
-					int card3 = scan.nextInt()-1;
 					System.out.println("Which cards make a set?");
-					if (card1 == 0 && card2 == 0 && card3 == 0) {
-						System.out.println("Would you like to keep playing?");
-						String choice = scan.nextLine();
-						if (choice.equals("no"))
-						{
-							playing = false;
-							break;
-						}
-						if (choice.equals("yes"))
-						{
-							System.out.println("Great!");
-						}
+						int card1 = scan.nextInt()-1;
+						int card2 = scan.nextInt()-1;
+						int card3 = scan.nextInt()-1;
+					if (card1 == -1 && card2 == -1 && card3 == -1) {
 						if (myBoard.getNumCardsOnBoard() < 15) {
 							System.out.println("Dealing three cards...");
 							myBoard.dealThreeCards(myDeck);
@@ -69,17 +58,20 @@ public class Referee {
 							System.out.println("There are already 15 cards in play!");
 						} else if (myDeck.outOfCards()) {
 							System.out.println("There are no more cards in the deck!");
-							System.out.println("Would you like to keep playing?");
-							String choice2 = scan.nextLine();
-							if (choice2.equals("no"))
-							{
+						}
+						System.out.println("Would you like to keep playing?");
+						boolean choosing = true;
+						while (choosing) {
+							String choice = scan.nextLine();
+							if (choice.equals("no"))
+							{choosing = false;
 								playing = false;
-								break;
-							}
-							if (choice2.equals("yes"))
-							{
+								break;}
+							 else if (choice.equals("yes")) {
 								System.out.println("Great!");
+								choosing = false;
 							}
+						}
 					}
 					else if (myBoard.isLegal(card1,card2,card3))
 					{
@@ -96,4 +88,4 @@ public class Referee {
 				}
 			}
 	}
-}
+

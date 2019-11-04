@@ -75,7 +75,6 @@ public class Card {
 
 		for (int i = 0; i <myNumber; i++)
 		{
-
 			result = ""+result+ " " +single+"";
 		}
 		return result;
