@@ -19,8 +19,8 @@ public class Deck {
 	 */
 
 	public Deck() {
-		Deck = new Card[81];
-		myCards = new Card[81];
+		Deck = new Card[82];
+		myCards = new Card[82];
 	}
 
 	public static Deck makeDeck() {

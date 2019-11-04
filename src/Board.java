@@ -16,12 +16,12 @@ public class Board {
 
 	Board(Deck d)
 	{
-		displayedCards = new Card[15];
-		for (int i = 1; i <= 12; i++)
+		displayedCards = new Card[16];
+		for (int i = 1; i <= 13; i++)
 		{
 			displayedCards[i] = d.dealCard();
 		}
-		for (int i = 12; i <= 15; i++)
+		for (int i = 13; i <= 16; i++)
 		{
 			displayedCards[i] = null;
 		}
@@ -216,9 +216,15 @@ public class Board {
 		String result = "";
 		//--------------------
 		// DONE: insert your code here.
-		for (int i=0; i<15; i++)
+		for (int i=1; i<16; i++)
 		{
-			result = result + i + ". " +displayedCards[i].toString()+ "\n";
+			if (displayedCards[i] != null) {
+				result = result + i + ". " + displayedCards[i].toString() + "\n";
+			}
+			else
+				{
+				return result;
+			}
 		}
 		//--------------------
 		return result;

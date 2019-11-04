@@ -37,10 +37,11 @@ public class Referee {
 	 */
 	public void playGame()
 	{
-		playing = true;
+
 		System.out.println("Great! Here are the rules: Find three cards that either share all features but one, or find three cards that share exactly 0 features.");
 		System.out.println("Now, type each number corresponding to each card that you think makes a set. Remember to type them in separate lines.");
 		System.out.println("If there isn't a set, or you just give up, type '0' for each line to get 3 cards added. The maximum amount of cards allowed at once is 15.");
+		playing = true;
 		while (playing)
 		{
 					System.out.println(myBoard.toString());
@@ -79,23 +80,5 @@ public class Referee {
 
 				}
 			}
-
-        //ask player if there is a set
-        //if there is set, and player determines set
-                //give them point
-        //if there is a set, but player does not see set
-                //tell player there is a set and to keep looking
-        //if there is no set, and player sees set
-                //tell player no set and deal 3 cards
-        // if there is no set, and player sees no set
-               //deal 3 cards
-
-
-
-
-
-		boolean gameIsStillPlaying = true;
-
-		System.out.println("Playing game."); // placeholder code
 	}
 }

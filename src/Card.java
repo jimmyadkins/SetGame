@@ -68,11 +68,13 @@ public class Card {
 
 	public String toString()
 	{
-		String result =  ""+myBracket1+"";
+		String icons = "";
+		String result;
 		for (int i = 0; i < mySize; i++) {
-			result = ""+result+ +myIcon+"";
+			icons = ""+icons+ +myIcon+"";
 		}
-		result = ""+result+ +myBracket2+ "";
+		result = ""+myBracket1+ icons +myBracket2+ "";
+
 		for (int i = 0; i <=mySize; i++)
 		{
 			String single = result;
