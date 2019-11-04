@@ -8,7 +8,7 @@
  */
 public class Board {
 
-	private Card[] displayedCards;
+	Card[] displayedCards;
 
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
@@ -16,12 +16,12 @@ public class Board {
 
 	Board(Deck d)
 	{
-		displayedCards = new Card[16];
-		for (int i = 1; i <= 13; i++)
+		displayedCards = new Card[15];
+		for (int i = 0; i <= 12; i++)
 		{
 			displayedCards[i] = d.dealCard();
 		}
-		for (int i = 13; i < 16; i++)
+		for (int i = 12; i < 15; i++)
 		{
 			displayedCards[i] = null;
 		}
@@ -198,7 +198,11 @@ public class Board {
 		{
 			if (displayedCards[i] != null)
 			{
-				numCards = numCards + 1;
+				numCards++;
+			}
+			else
+			{
+				return numCards;
 			}
 		}
 
@@ -216,17 +220,20 @@ public class Board {
 		String result = "";
 		//--------------------
 		// DONE: insert your code here.
-		for (int i=1; i<16; i++)
+		int x = 1;
+		for (int i=0; i<15; i++)
 		{
 			if (displayedCards[i] != null) {
-				result = result + i + ". " + displayedCards[i].toString() + "\n";
+				result = result + x + ". " + displayedCards[i].toString() + "\n";
 			}
 			else
 				{
-				return result;
+				//return result;
 			}
+			x++;
 		}
 		//--------------------
+
 		return result;
 	}
 }

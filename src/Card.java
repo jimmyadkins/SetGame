@@ -47,8 +47,6 @@ public class Card {
 		myBracket = bracketNum;
 		myBracket1 = bracket1;
 		myBracket2 = bracket2;
-
-
 	}
 
 	// Done: write accessors for all member variables. In this case,
@@ -69,15 +67,15 @@ public class Card {
 	public String toString()
 	{
 		String icons = "";
-		String result;
+		String result = "";
 		for (int i = 0; i < mySize; i++) {
-			icons = ""+icons+ +myIcon+"";
+			icons = icons +myIcon+"";
 		}
-		result = ""+myBracket1+ icons +myBracket2+ "";
+		String single = ""+myBracket1+ icons +myBracket2+ "";
 
-		for (int i = 0; i <=mySize; i++)
+		for (int i = 0; i <myNumber; i++)
 		{
-			String single = result;
+
 			result = ""+result+ " " +single+"";
 		}
 		return result;

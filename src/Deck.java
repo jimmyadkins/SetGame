@@ -4,9 +4,8 @@
  * The Deck class represents a stack of cards. 
  */
 
-public class Deck {
-	Card[] Deck;
-	Card[] myCards;
+ public class Deck {
+ 	Card[] myCards;
 	private Card topCard;
 	private int topLoc = 0;
 	private int numCards = 0;
@@ -19,11 +18,6 @@ public class Deck {
 	 */
 
 	public Deck() {
-		Deck = new Card[82];
-		myCards = new Card[82];
-	}
-
-	public static Deck makeDeck() {
 		int[] num = new int[]{1, 2, 3};
 		int[] size = new int[]{1, 2, 3};
 		char[] icon = new char[]{'&', '@', '#'};
@@ -32,55 +26,63 @@ public class Deck {
 		char[] bracket1 = new char[]{'<', '{', '['};
 		char[] bracket2 = new char[]{'>', '}', ']'};
 
-		Deck result = new Deck();
-
+		this.myCards = new Card[81];
+		int index = 0;
 		for (int iconNumber = 0; iconNumber < icon.length; ++iconNumber) {
 			for (int bracketNum = 0; bracketNum < bracket1.length; ++bracketNum) {
 				for (int sizeNum = 0; sizeNum < icon.length; ++sizeNum) {
-					for (int numNum = 0; numNum < bracket1.length; ++numNum) {
-						result.addCard(new Card(icon[iconNumber], iconNum[iconNumber], num[numNum], size[sizeNum], bracket[bracketNum], bracket1[bracketNum], bracket2[bracketNum]));
+					for (int numNum = 0; numNum < num.length; ++numNum) {
+						this.myCards[index] = new Card(icon[iconNumber], iconNum[iconNumber], num[numNum], size[sizeNum], bracket[bracketNum], bracket1[bracketNum], bracket2[bracketNum]);
+						System.out.println();
+						System.out.println(this.myCards[index].toString());
+						System.out.println();
+						index++;
 					}
 				}
 			}
 		}
 
-		result.shuffle();
-
-		return result;
+		shuffle();
 	}
 
-	public int getNumCards(Card x[])
+	public int getNumCards()
 	{
 		numCards = 0;
-		for (int i=0; i<=81; i++)
+		for (int i=0; i<81; i++)
 		{
-			if (x[i] != null)
+			if (this.myCards[i] != null)
 			{
 				numCards++;
 			}
-			else{break;}
+			else{return numCards;}
 		}
 		return numCards;
 	}
 
-	public int getTopLoc(Card x[])
+	private int getTopLoc()
 	{
-		for (int i = 0; i <=81; i++)
+		for (int i = 0; i <81; i++)
 		{
-			if (x[i] == null || i == 81)
+			if (this.myCards[i] != null || i == 81)
 			{
 				topLoc = i-1;
-				break;
+			}
+			else
+			{
+				return topLoc;
 			}
 		}
 		return topLoc;
 	}
 
-	public Card getTopCard(Card x[]) {
-		for (int i = 0; i <= 81; i++) {
-			if (x[i] == null || i == 81) {
-				topCard = x[i - 1];
-				break;
+	private Card getTopCard() {
+		for (int i = 0; i < 81; i++) {
+			if (this.myCards[i] != null || i == 81) {
+				topCard = this.myCards[i];
+			}
+			else
+			{
+				return topCard;
 			}
 
 		}
@@ -90,7 +92,7 @@ public class Deck {
 
 
 	public void addCard(Card c) {
-		Deck[getTopLoc(Deck) + 1] = c;
+		this.myCards[getTopLoc() + 1] = c;
 	}
 
 
@@ -106,14 +108,14 @@ public class Deck {
 	public Card dealCard() {
 		Card c;
 
-		if (this.outOfCards())
+		if (!this.outOfCards())
 		{
-			return null;
+			c = getTopCard();
+			this.myCards[getTopLoc()] = null;
 		}
 		else
 		{
-			c = getTopCard(Deck);
-			Deck[getTopLoc(Deck)] = null;
+			return null;
 		}
 		return c;
 	}
@@ -126,11 +128,11 @@ public class Deck {
 
 	void shuffle() {
 		for (int i = 0; i < numCards * 3; ++i) {
-			int a = (int) (Math.random() * (double) numCards);
-			int b = (int) (Math.random() * (double) numCards);
-			Card temp = this.Deck[a];
-			this.Deck[a] = Deck[b];
-			this.Deck[b] = temp;
+			int a = (int) (Math.random() * (double) getNumCards());
+			int b = (int) (Math.random() * (double) getNumCards());
+			Card temp = this.myCards[a];
+			this.myCards[a] = this.myCards[b];
+			this.myCards[b] = temp;
 		}
 	}
 
@@ -142,10 +144,12 @@ public class Deck {
 
 	public boolean outOfCards() {
 
-		if (getNumCards(Deck) > 0) {
+		if (getNumCards() > 0) {
+			return false;
+		}
+		else {
 			return true;
 		}
-		return false;
 	}
 
 }
